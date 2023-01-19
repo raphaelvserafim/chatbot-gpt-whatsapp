@@ -16,7 +16,7 @@ class OpenAI
         $this->apiKey = $apiKey;
     }
 
-    public function generateText($prompt, $model = 'text-davinci-003', $temperature = 0.9, $max_tokens = 150, $top_p = 1, $frequency_penalty = 0, $presence_penalty = 0.6, $stop = ["Human:", "AI:"])
+    public function generateText($prompt, $model = 'text-davinci-003', $temperature = 0.9, $max_tokens = 3646, $top_p = 1, $frequency_penalty = 0, $presence_penalty = 0.6, $stop = ["Human:", "AI:"])
     {
         $curl = curl_init();
 

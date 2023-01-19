@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6c6caddd74dbd9e8a1460cf7cb47d535",
+    "packages": [
+        {
+            "name": "cachesistemas/classephpapiwame",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/raphaelvserafim/classe-php-api-wa.me.git",
+                "reference": "7add13e766864ad33ffd7cdcd1ee222a96b3b53a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/raphaelvserafim/classe-php-api-wa.me/zipball/7add13e766864ad33ffd7cdcd1ee222a96b3b53a",
+                "reference": "7add13e766864ad33ffd7cdcd1ee222a96b3b53a",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cachesistemas\\ClassePhpApiWame\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Serafim",
+                    "email": "raphaelvserafim@gmail.com"
+                }
+            ],
+            "description": "Classe PHP comunicação com api-wa.me",
+            "homepage": "https://github.com/raphaelvserafim/classe-php-api-wa.me",
+            "support": {
+                "issues": "https://github.com/raphaelvserafim/classe-php-api-wa.me/issues",
+                "source": "https://github.com/raphaelvserafim/classe-php-api-wa.me/tree/v2.0.4"
+            },
+            "time": "2022-12-06T01:28:54+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

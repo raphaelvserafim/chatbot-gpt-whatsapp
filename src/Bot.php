@@ -48,8 +48,7 @@ class Bot
 
                 $this->whatsapp       = new WhatsApp(["server" => $this->wpp_server, "key" => $this->wpp_key]);
 
-                $r = $this->asking($text);
-
+                $r                    = $this->asking($text);
 
                 if (isset($r)) {
                     $this->sendMessage($r);
