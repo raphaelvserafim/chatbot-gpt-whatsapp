@@ -1,0 +1,16 @@
+{
+    "name": "cachesistemas/chatbot-gpt-whatsapp",
+    "description": "ChatBot para WhatsApp usando IA GPT",
+    "autoload": {
+        "psr-4": {
+            "Cachesistemas\\ChatbotGptWhatsapp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raphael Serafim",
+            "email": "raphaelvserafim@gmail.com"
+        }
+    ],
+    "require": {}
+}
