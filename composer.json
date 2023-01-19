@@ -12,5 +12,7 @@
             "email": "raphaelvserafim@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "cachesistemas/classephpapiwame": "^2.0"
+    }
 }
