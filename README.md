@@ -1,4 +1,4 @@
-# Interagindo com o ChatGPT API e WhatsApp 
+# Criando um chatbot automatizado: Classe PHP combina integração com ChatGPT e API do WhatsApp
  
 ## CONTATO 
  
