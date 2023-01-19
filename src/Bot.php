@@ -18,6 +18,8 @@ class Bot
 
     private  $open_key;
 
+    private $to;
+
     public function __construct($dados)
     {
         $this->wpp_server     = $dados["wpp_server"];
@@ -33,16 +35,46 @@ class Bot
     public function start()
     {
         if (isset($this->data["data"]["key"]["remoteJid"])) {
-            $this->openAI         = new OpenAI($this->open_key);
-            $this->whatsapp       = new WhatsApp(["server" => $this->wpp_server, "key" => $this->wpp_key]);
+
+
+            $this->to             = preg_replace('/[^\d\-]/', '', $this->data["data"]["key"]["remoteJid"]);
+
+
+
+            if (isset($this->data["msgContent"]["conversation"])) {
+
+                $text                 = $this->data["msgContent"]["conversation"];
+
+                $this->openAI         = new OpenAI($this->open_key);
+
+                $this->whatsapp       = new WhatsApp(["server" => $this->wpp_server, "key" => $this->wpp_key]);
+
+                $r = $this->asking($text);
+                if (isset($r)) {
+                    $this->sendMessage($r);
+                }
+            }
         }
     }
 
 
     public function asking($text)
     {
-        $result  = $this->openAI->generateText($text);
+        $asking     = "";
+        $result     = $this->openAI->generateText($text);
         if (sizeof($result["choices"]) > 0) {
+            for ($i = 0; sizeof($result["choices"]) > $i; $i++) {
+                $asking  .= $result["choices"][$i]["text"] . "\n";
+            }
         }
+        return $asking;
+    }
+
+
+    public function sendMessage($msg)
+    {
+        $this->whatsapp->sendPresence($this->to, 'composing');
+        sleep(1);
+        $this->whatsapp->sendText($this->to, $msg);
     }
 }
