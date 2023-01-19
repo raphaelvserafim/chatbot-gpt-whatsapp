@@ -1,4 +1,4 @@
-# ChatBot WhatsApp usando ChatGPT 
+# Interagindo com o ChatGPT API e WhatsApp 
  
 ## CONTATO 
  
