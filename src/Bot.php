@@ -39,8 +39,6 @@ class Bot
 
             $this->to             = preg_replace('/[^\d\-]/', '', $this->data["data"]["key"]["remoteJid"]);
 
-
-
             if (isset($this->data["msgContent"]["conversation"])) {
 
                 $text                 = $this->data["msgContent"]["conversation"];
