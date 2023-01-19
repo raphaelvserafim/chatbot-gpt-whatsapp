@@ -26,7 +26,7 @@ class Bot
         $this->wpp_key        = $dados["wpp_key"];
         $this->open_key        = $dados["open_key"];
 
-        $this->data  = file_get_contents('php://input');
+        $this->data  = json_decode(file_get_contents('php://input'), true);
         if (isset($this->data)) {
             $this->start();
         }
@@ -34,12 +34,15 @@ class Bot
 
     public function start()
     {
+
+      
         if (isset($this->data["data"]["key"]["remoteJid"])) {
 
+           
 
             $this->to             = preg_replace('/[^\d\-]/', '', $this->data["data"]["key"]["remoteJid"]);
 
-            if (isset($this->data["msgContent"]["conversation"])) {
+            if (isset($this->data["data"]["msgContent"]["conversation"])) {
 
                 $text                 = $this->data["msgContent"]["conversation"];
 
@@ -48,6 +51,8 @@ class Bot
                 $this->whatsapp       = new WhatsApp(["server" => $this->wpp_server, "key" => $this->wpp_key]);
 
                 $r = $this->asking($text);
+
+
                 if (isset($r)) {
                     $this->sendMessage($r);
                 }
