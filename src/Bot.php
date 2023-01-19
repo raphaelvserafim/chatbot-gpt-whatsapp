@@ -35,16 +35,14 @@ class Bot
     public function start()
     {
 
-      
-        if (isset($this->data["data"]["key"]["remoteJid"])) {
 
-           
+        if (isset($this->data["data"]["key"]["remoteJid"])) {
 
             $this->to             = preg_replace('/[^\d\-]/', '', $this->data["data"]["key"]["remoteJid"]);
 
             if (isset($this->data["data"]["msgContent"]["conversation"])) {
 
-                $text                 = $this->data["msgContent"]["conversation"];
+                $text                 = $this->data["data"]["msgContent"]["conversation"];
 
                 $this->openAI         = new OpenAI($this->open_key);
 
@@ -63,13 +61,12 @@ class Bot
 
     public function asking($text)
     {
-        $asking     = "";
-        $result     = $this->openAI->generateText($text);
-        if (sizeof($result["choices"]) > 0) {
-            for ($i = 0; sizeof($result["choices"]) > $i; $i++) {
-                $asking  .= $result["choices"][$i]["text"] . "\n";
-            }
-        }
+
+        $result      = $this->openAI->generateText($text);
+        $asking      = $result["choices"][0]["text"];
+        $fp          = fopen('assets/log.json', 'a+');
+        fwrite($fp,  "\n\n\n\n" .  ($asking) .  "\n\n\n");
+        fclose($fp);
         return $asking;
     }
 
