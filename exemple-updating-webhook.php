@@ -13,5 +13,6 @@ $body = [
     "webhookConnection" => "",
     "webhookQrCode" => ""
 ];
+
 $whatsapp->updateWebhook($body);
 
