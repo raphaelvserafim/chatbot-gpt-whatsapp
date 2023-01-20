@@ -20,12 +20,28 @@
 </a>  
 </p>
  
-<a href="https://api-wa.me/auth/registre-se" target="_blank">API Key WhatsApp</p>
+
+
+## Example of use:
+
 <a href="https://beta.openai.com/account/api-keys" target="_blank">Key OpenAI</p>
 
+<a href="https://api-wa.me/auth/registre-se" target="_blank">API Key WhatsApp</p>
 
-## Exemplo:
 
+```php
+echo $whatsapp->getQrCodeHTML();
+```
+
+### Updating webhook
+
+```php
+$body = ["allowWebhook" => true,"webhookMessage" => "your-url.com/webhook.php","webhookGroup" => "","webhookConnection" => "","webhookQrCode" => ""];
+        
+$whatsapp->updateWebhook($body);
+```
+
+### your-url.com/webhook.php
 ```php
 use Cachesistemas\ChatbotGptWhatsapp\Bot;
 
