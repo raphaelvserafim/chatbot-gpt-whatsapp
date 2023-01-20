@@ -29,25 +29,33 @@
 <a href="https://api-wa.me/auth/registre-se" target="_blank">API Key WhatsApp</p>
 
 
+### Connecting with Whatsapp
 ```php
+use Cachesistemas\ClassePhpApiWame\WhatsApp;
+
+include_once 'vendor/autoload.php';
+
+$whatsapp     = new WhatsApp(["server" => "API server", "key" => "Your Key Instance"]);
+
 echo $whatsapp->getQrCodeHTML();
+
 ```
 
 ### Updating webhook
-
 ```php
-$body = ["allowWebhook" => true,"webhookMessage" => "your-url.com/webhook.php","webhookGroup" => "","webhookConnection" => "","webhookQrCode" => ""];
-        
+$body = ["allowWebhook" => true,
+"webhookMessage" => "your-url.com/webhook.php",
+"webhookGroup" => "",
+"webhookConnection" => "",
+"webhookQrCode" => ""];
 $whatsapp->updateWebhook($body);
 ```
+
 
 ### your-url.com/webhook.php
 ```php
 use Cachesistemas\ChatbotGptWhatsapp\Bot;
-
 include 'vendor/autoload.php';
-
 new Bot(["wpp_server" => "", "wpp_key" => "", "open_key" => " "]);
-
 
 ```
