@@ -28,7 +28,10 @@
 
 <a href="https://api-wa.me/auth/registre-se" target="_blank">API Key WhatsApp</p>
 
-
+## Installing composer
+```
+composer require cachesistemas/chatbot-gpt-whatsapp
+```
 ### Connecting with Whatsapp
 ```php
 use Cachesistemas\ClassePhpApiWame\WhatsApp;
